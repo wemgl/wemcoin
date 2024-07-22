@@ -18,7 +18,8 @@ func init() {
 	var once sync.Once
 	once.Do(func() {
 		blockchain = &Blockchain{
-			utxos: make(map[string]*TransactionOutput),
+			utxos:  make(map[string]*TransactionOutput),
+			blocks: make([]*Block, 0),
 		}
 	})
 }
